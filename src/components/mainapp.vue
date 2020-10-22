@@ -51,7 +51,20 @@
 
                   <b-table-column field="address" label="Twitter" v-slot="props">
                     <div v-if="props.row.twitter">
-                      {{ props.row.twitter }}
+                    
+                    
+                     <a
+                      target="_blank"
+                      v-bind:href="
+                        'https://twitter.com/' + props.row.twitter
+                      "
+                    >
+                      <b-button size="is-small"> @{{ props.row.twitter }}</b-button>
+                    </a>
+                    
+                    
+                    
+                     
                     </div>
                     <div v-else>
                       <b-button size="is-small" type="is-link is-light" @click="isCardModalActive = true">Set Twitter</b-button>
